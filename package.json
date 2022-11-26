@@ -30,6 +30,7 @@
     "lint": "eslint . --ext .js,.jsx",
     "lintfix": "eslint . --ext .js,.jsx --fix",
     "docs": "jsdoc -c jsdoc.conf.json",
+    "deploy": "firebase deploy",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
