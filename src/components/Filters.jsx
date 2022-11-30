@@ -2,6 +2,8 @@ import React from 'react'
 import Stack from '@mui/material/Stack'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+import { Grid } from '@mui/material'
+
 
 /**
  * Component with filter button for filter list of todo item
@@ -25,24 +27,26 @@ const Filters = ({ status, setStatus }) => {
 
   return (
 
-    <Stack justifyContent='center' direction='row'>
-      <ToggleButtonGroup exclusive  value={status} onChange={statusHandler}>
-        <ToggleButton value='uncompleted'>
-          Uncompleted
+    <Stack justifyContent='center' justifyItems='center' >
+      <Grid contaiter direction='row' alignSelf='center' >
+      <ToggleButtonGroup exclusive  value={status} onChange={statusHandler} sx={{backgroundColor: 'white', width:'380px'}} >
+        <ToggleButton value='uncompleted' sx={{width:'120px'}}>
+          Uncompleted 
         </ToggleButton>
-        <ToggleButton value='overdue'>
+        <ToggleButton value='overdue' sx={{width:'75px'}}>
           Overdue
         </ToggleButton>
-        <ToggleButton value='current'>
+        <ToggleButton value='current' sx={{width:'75px'}}>
           Current
         </ToggleButton>
-        <ToggleButton value='completed'>
-          Completed
+        <ToggleButton value='completed' sx={{width:'90px'}}>
+          Done
         </ToggleButton>
         <ToggleButton value='all'>
           All
         </ToggleButton>
       </ToggleButtonGroup>
+      </Grid>
     </Stack>
   )
 }

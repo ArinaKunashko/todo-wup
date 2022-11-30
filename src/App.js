@@ -16,9 +16,23 @@ import TodoList from './components/TodoList'
 const theme = createTheme({
   palette: {
     background: {
-      default: 'aliceblue',
+      default: '#455a64',
     },
+    primary: {
+      main: '#283593',
+    },
+    text: {
+      white: '#efefef',
+    },
+
+    
   },
+  typography: {
+    h3: {
+      fontSize: '5rem',
+      lineHeight: 1.06,
+    },
+  }
 })
 
 function App() {
@@ -140,11 +154,11 @@ function App() {
       <CssBaseline />
       <Container maxWidth='md'>
         <Stack spacing={5}>
-          <Typography variant='h2' align='center'> Todo List</Typography>
+          <Typography variant='h3' align='center' color='white'> Todo List</Typography>
           <Filters status={status}
             setStatus={setStatus}
           />
-          <Fab color='primary' sx={{ position: 'fixed', bottom: (theme) => theme.spacing(5) }}
+          <Fab color='primary' sx={{ position: 'fixed', bottom: (theme) => theme.spacing(9) }}
             onClick={handleClickCreate} >
             <AddIcon />
           </Fab>

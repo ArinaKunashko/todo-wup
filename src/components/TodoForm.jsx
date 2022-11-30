@@ -100,21 +100,22 @@ const TodoForm = ({ cand, open, onClose, saveItem }) => {
 
     return (
 
-        <Dialog onClose={onClose} open={open} fullWidth maxWidth='md'>
+        <Dialog onClose={onClose} open={open} fullWidth maxWidth='md' >
             <DialogTitle>{item.id ? 'Edit Todo' : 'Create New Todo'}</DialogTitle>
-            <Card sx={{ minWidth: '900px' }}>
+            <Card sx={{ minWidth: '300px' }}>
                 <form onSubmit={saveTodoHandler}>
                     <CardContent>
-                        <Stack
+                        <Stack 
                             sx={{
-                                '& .MuiTextField-root': { m: 2, width: '65ch' },
+                                '& .MuiTextField-root': { m: 2,  width: '100%'},
                             }}
                             noValidate
                             autoComplete='off'
                             justifyContent='center'
                             alignItems='center'
-                            direction='column'
+                            direction='column' 
                         >
+
                             <LocalizationProvider dateAdapter={AdapterDayjs}>
                                 <DesktopDatePicker
                                     label='Deadline date'
