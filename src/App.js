@@ -24,16 +24,16 @@ const theme = createTheme({
     text: {
       white: '#efefef',
     },
-
-    
   },
-  typography: {
-    h3: {
-      fontSize: '5rem',
-      lineHeight: 1.06,
-    },
-  }
 })
+
+theme.typography.h3 = {
+  fontSize: '5rem',
+  fontWeight: 450,
+  [theme.breakpoints.down('md')]: {
+    fontSize: '3rem',
+  },
+}
 
 function App() {
 
@@ -153,8 +153,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container maxWidth='md'>
-        <Stack spacing={5}>
-          <Typography variant='h3' align='center' color='white'> Todo List</Typography>
+        <Stack spacing={5} marginTop='15px' marginBottom='20px'>
+          <Typography variant='h3' align='center' color='white' > Todo List</Typography>
           <Filters status={status}
             setStatus={setStatus}
           />
